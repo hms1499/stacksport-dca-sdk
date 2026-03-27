@@ -1,0 +1,55 @@
+{
+  "name": "@stacksport/dca-sdk",
+  "version": "0.1.0",
+  "description": "TypeScript SDK for StacksPort DCA Vaults — create, manage, and auto-execute Dollar Cost Averaging plans on Stacks blockchain",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./keeper": {
+      "types": "./dist/keeper/index.d.ts",
+      "import": "./dist/keeper/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "stacks",
+    "dca",
+    "dollar-cost-averaging",
+    "sbtc",
+    "defi",
+    "bitcoin",
+    "clarity",
+    "smart-contracts"
+  ],
+  "dependencies": {
+    "@stacks/network": "^7.3.1",
+    "@stacks/transactions": "^7.3.1"
+  },
+  "peerDependencies": {
+    "@stacks/connect": ">=8.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@stacks/connect": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@stacks/connect": "^8.2.5",
+    "@types/node": "^20",
+    "typescript": "^5"
+  }
+}
