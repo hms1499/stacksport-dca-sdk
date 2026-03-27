@@ -1,5 +1,11 @@
 # @stacksport/dca-sdk
 
+[![npm version](https://img.shields.io/npm/v/@stacksport/dca-sdk)](https://www.npmjs.com/package/@stacksport/dca-sdk)
+[![npm downloads](https://img.shields.io/npm/dm/@stacksport/dca-sdk)](https://www.npmjs.com/package/@stacksport/dca-sdk)
+[![license](https://img.shields.io/npm/l/@stacksport/dca-sdk)](./LICENSE)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue?logo=typescript)](https://www.typescriptlang.org/)
+[![Stacks](https://img.shields.io/badge/Stacks-blockchain-5546FF?logo=bitcoin)](https://stacks.co)
+
 TypeScript SDK for **StacksPort DCA Vaults** — create, manage, and auto-execute Dollar Cost Averaging plans on the Stacks blockchain.
 
 ## Features
