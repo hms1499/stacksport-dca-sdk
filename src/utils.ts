@@ -16,9 +16,14 @@ export const btcToSats = (btc: number) => toSmallest(btc, 8);
 
 /** Convert block interval to human label */
 export function blocksToLabel(blocks: number): string {
-  if (blocks === 1300) return "Daily";
-  if (blocks === 9100) return "Weekly";
-  if (blocks === 39000) return "Monthly";
+  // Current values
+  if (blocks === 650) return "Daily";
+  if (blocks === 4550) return "Weekly";
+  if (blocks === 19500) return "Monthly";
+  // v2 intervals
+  if (blocks === 1300) return "Daily (v2)";
+  if (blocks === 9100) return "Weekly (v2)";
+  if (blocks === 39000) return "Monthly (v2)";
   // Legacy intervals
   if (blocks === 9360) return "Daily (legacy)";
   if (blocks === 65520) return "Weekly (legacy)";

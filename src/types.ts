@@ -53,12 +53,12 @@ export interface DCAStats {
 
 /** Pre-defined block intervals for Nakamoto (~6.5 blocks/min) */
 export const Intervals = {
-  /** ~3.3 hours (1,300 blocks) */
-  Daily: 1300,
-  /** ~1 day (9,100 blocks) */
-  Weekly: 9100,
-  /** ~4.2 days (39,000 blocks) */
-  Monthly: 39000,
+  /** ~1.7 hours (650 blocks) */
+  Daily: 650,
+  /** ~11.7 hours (4,550 blocks) */
+  Weekly: 4550,
+  /** ~2.1 days (19,500 blocks) */
+  Monthly: 19500,
 } as const;
 
 export type IntervalName = keyof typeof Intervals;
