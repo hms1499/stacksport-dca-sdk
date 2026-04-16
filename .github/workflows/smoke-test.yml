@@ -1,0 +1,35 @@
+name: Smoke Test Published Package
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 6 * * *"
+
+jobs:
+  smoke-test-published-package:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: https://registry.npmjs.org
+
+      - name: Create clean test project
+        run: |
+          mkdir smoke
+          cd smoke
+          npm init -y
+
+      - name: Install published package
+        working-directory: smoke
+        run: npm install @stacksport/dca-sdk@latest @stacks/connect
+
+      - name: Smoke test root export
+        working-directory: smoke
+        run: node -e "import('@stacksport/dca-sdk').then((m) => { const vault = new m.DCAVault('stx-to-sbtc'); console.log(Boolean(vault)); })"
+
+      - name: Smoke test keeper export
+        working-directory: smoke
+        run: node -e "import('@stacksport/dca-sdk/keeper').then(() => { console.log('keeper ok'); })"
